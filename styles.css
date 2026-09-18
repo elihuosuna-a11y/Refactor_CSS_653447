@@ -1,0 +1,129 @@
+﻿/* ===== Estilos base (aprovechan la cascada) ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #0d6efd;
+  color: white;
+  padding: 16px;
+}
+
+main {
+  padding: 16px;
+}
+
+footer {
+  background: #f8f9fa;
+  color: #333;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ===== Layout reutilizable ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ===== Navegación ===== */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+/* ===== Texto ===== */
+.section-title {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.lead {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== Botones ===== */
+.btn {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-success {
+  background: #198754;
+}
+
+/* ===== Tarjetas de producto ===== */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+}
+
+.card-text {
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.badge {
+  display: inline-block;
+  background: #ffeeba;
+  color: #664d03;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== Contacto ===== */
+.contact-link {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* ===== Elementos únicos (IDs) ===== */
+
+/*
+  Decision 1: por que clase vs id.
+  Usamos clases (.card, .btn, .badge, .mb-24, etc.) para cualquier estilo que se
+  repite en mas de un elemento, asi evitamos duplicar reglas (principio DRY) y
+  basta con cambiar una sola clase para actualizar todos los elementos que la usan.
+  Reservamos los IDs solo para elementos verdaderamente unicos en la pagina, como
+  el titulo principal del sitio o los puntos de anclaje de la navegacion, donde
+  no tiene sentido crear una clase porque solo existe un elemento con ese estilo.
+*/
+#site-title {
+  margin: 0;
+  font-size: 28px;
+}
+
+/*
+  Decision 2: aprovechar la cascada.
+  Definimos estilos base a nivel de elemento (body, header, main, footer) al
+  inicio del archivo para que todo el contenido dentro de ellos los herede
+  automaticamente. Luego las clases y los IDs solo sobrescriben las propiedades
+  puntuales que necesitan ser distintas, en vez de repetir toda la declaracion
+  de estilos en cada elemento.
+*/
+#home,
+#productos,
+#contacto {
+  scroll-margin-top: 16px;
+}
